@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-const contactSchema= new mongoose({
+const { Schema } = mongoose;
+
+const contactSchema = new Schema({
     username: {
         type: String,
         required: true,
@@ -19,12 +21,9 @@ const contactSchema= new mongoose({
     },
 },
 {
-    timestamp:true,
-}
-)
+    timestamps: true,
+})
 
-
-const Contact=mongoose.models.Contact || mongoose.model('Contact',contactSchema)
-
+const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema)
 
 export default Contact
